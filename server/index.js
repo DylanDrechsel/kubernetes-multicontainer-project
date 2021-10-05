@@ -1,4 +1,4 @@
-const keys = require("./keys.js")
+const keys = require("./keys")
 
 // Express Application setup
 const express = require("express")
