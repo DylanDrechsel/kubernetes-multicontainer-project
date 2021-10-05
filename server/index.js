@@ -37,13 +37,14 @@ app.get("/values/all", async (req, res) => {
 })
 
 // Now the post -> insert values
-app.post("values", async (req, res) => {
-    if (!req.body.value) res.send({ working: false })
-
-    pgClient.query("INSERT INTO values(number) VALUES($1)", [req.body.value])
-
-    res.send({ working: true })
-})
+app.post("/values", async (req, res) => {
+    if (!req.body.value) res.send({ working: false });
+  
+    pgClient.query("INSERT INTO values(number) VALUES($1)", [req.body.value]);
+  
+    res.send({ working: true });
+  });
+  
 
 app.listen(5000, (err) => {
     console.log("Listening on port 5000")
